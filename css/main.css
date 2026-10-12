@@ -40,6 +40,7 @@ header {
   list-style: none;
   display: flex;
   gap: var(--espacio-2);
+  flex-wrap: wrap;
 }
 
 .menu a,
@@ -100,7 +101,7 @@ h1 {
 }
 .emociones-botones button {
   background: transparent;
-  border: 2px solid;
+  border: 2px solid var(--color-tinta);
   color: inherit;
 
   padding: var(--espacio-1) var(--espacio-3);
@@ -108,7 +109,8 @@ h1 {
   min-height: 44px;
   cursor: pointer;
 }
-.emociones-botones button {
+.emociones {
+  display: flex;
   flex-direction: column;
   gap: var(--espacio-3);
 }
@@ -123,4 +125,46 @@ h1 {
 .emociones-botones button:focus-visible {
   background-color: var(--color-tinta);
   color: var(--color-fondo);
+}
+
+.seccion {
+  padding: var(--espacio-5);
+  border-top: 2px solid var(--color-tinta);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-5);
+}
+.cabecera-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+}
+h2 {
+  font-size: clamp(44px, 5vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.rejilla-article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacio-2);
+}
+.rejilla-article article {
+  display: flex;
+  flex-direction: column;
+}
+.rejilla-article img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radio-esquinas);
+}
+.etiquetas {
+  gap: var(--espacio-1);
+}
+.etiquetas li {
+  font-size: 13px;
+  border: 1.5px solid;
+  border-radius: var(--radio-pastilla);
+  padding: var(--espacio-0) var(--espacio-1);
 }
