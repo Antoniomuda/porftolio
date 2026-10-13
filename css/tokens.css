@@ -38,4 +38,6 @@
   --espacio-4: 48px;
 
   --espacio-5: 96px;
+
+  --margen-lateral: clamp(16px, 5vw, 96px);
 }
