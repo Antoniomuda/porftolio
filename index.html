@@ -54,12 +54,28 @@
             <p>¿Cómo te sientes hoy? Elige y la web cambia contigo.</p>
 
             <div class="emociones-botones">
-              <button id="relajacion">Relajado</button>
-              <button id="alegria">Alegre</button>
-              <button id="sorprendido">Sorprendido</button>
-              <button id="emocionado">Emocionado</button>
-              <button id="curioso">Curioso</button>
-              <button id="comodo">Lectura cómoda</button>
+              <button type="button" data-tema="relajacion" aria-pressed="true">
+                Relajado
+              </button>
+              <button type="button" data-tema="alegria" aria-pressed="false">
+                Alegre
+              </button>
+              <button
+                type="button"
+                data-tema="sorprendido"
+                aria-pressed="false"
+              >
+                Sorprendido
+              </button>
+              <button type="button" data-tema="emocionado" aria-pressed="false">
+                Emocionado
+              </button>
+              <button type="button" data-tema="curioso" aria-pressed="false">
+                Curioso
+              </button>
+              <button type="button" id="lectura" aria-pressed="false">
+                Lectura cómoda
+              </button>
             </div>
           </div>
         </div>

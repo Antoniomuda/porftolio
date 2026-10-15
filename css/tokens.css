@@ -41,3 +41,40 @@
 
   --margen-lateral: clamp(16px, 5vw, 96px);
 }
+
+[data-tema="alegria"] {
+  --color-fondo: #fbd3e1;
+  --color-superficie: #f6a9c8;
+  --rosa-chicle: #ff006b;
+  --amarillo: #f2ed6b;
+  --color-tinta: #3a0d22;
+  --color-acento: #e2264b;
+  --color-acento2: #e8a317;
+}
+[data-tema="sorprendido"] {
+  --color-fondo: #2a2ad9;
+  --color-superficie: #1c1ca6;
+  --azul-cielo: #8cc0d1;
+  --amarillo: #f2ed6b;
+  --color-tinta: #ffffff;
+  --color-acento: #ff6b2c;
+  --color-acento2: #ffd23f;
+}
+[data-tema="emocionado"] {
+  --color-fondo: #e5332a;
+  --color-superficie: #c42820;
+  --azul-cielo: #8cc0d1;
+  --amarillo: #f2ed6b;
+  --color-tinta: #0d0d0d;
+  --color-acento: #0d0d0d;
+  --color-acento2: #f7e9d7;
+}
+[data-tema="curioso"] {
+  --color-fondo: #1d5e3f;
+  --color-superficie: #164a31;
+  --azul-cielo: #fff3d6;
+  --amarillo: #f2ed6b;
+  --color-tinta: #fff3d6;
+  --color-acento: #f5c518;
+  --color-acento2: #4fa3e0;
+}

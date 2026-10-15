@@ -2,6 +2,7 @@ body {
   background-color: var(--color-fondo);
   font-family: var(--fuente-texto);
   color: var(--color-tinta);
+  transition: var(--color-fondo) var(--fuente-texto) 0.4s;
 }
 h1,
 h2,
@@ -235,8 +236,4 @@ footer {
   border-color: var(--color-tinta);
   font-size: 15px;
   gap: var(--espacio-1);
-}
-
-* {
-  outline: 1px solid red;
 }
