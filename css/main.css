@@ -237,3 +237,7 @@ footer {
   font-size: 15px;
   gap: var(--espacio-1);
 }
+.emociones-botones button[aria-pressed="true"] {
+  background-color: var(--color-tinta);
+  color: var(--color-fondo);
+}
