@@ -1,11 +1,37 @@
 @font-face {
   font-family: "Space Grotesk";
-  src: url("../assets/fonts/space-grotesk-latin-wght-normal.woff2")
+  src: url("../assets/fonts/space-grotesk-latin-ext-wght-normal.woff2")
     format("woff2");
-  font-weight: 300 700;
+  font-weight: 300 900;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces-latin-wght-normal.woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../assets/fonts/bricolage-grotesque-latin-wght-normal.woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixelify";
+  src: url("../assets/fonts/pixelify-sans-latin-ext-wght-normal.woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("../assets/fonts/syne-latin-wght-normal.woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
 :root {
   --color-fondo: #f3ebdd;
 
@@ -50,6 +76,8 @@
   --color-tinta: #3a0d22;
   --color-acento: #e2264b;
   --color-acento2: #e8a317;
+  --fuente-titulares: "Fraunces", serif;
+  --peso-titulares: 700;
 }
 [data-tema="sorprendido"] {
   --color-fondo: #2a2ad9;
@@ -59,6 +87,8 @@
   --color-tinta: #ffffff;
   --color-acento: #ff6b2c;
   --color-acento2: #ffd23f;
+  --fuente-titulares: "Pixelify", sans-serif;
+  --peso-titulares: 700;
 }
 [data-tema="emocionado"] {
   --color-fondo: #e5332a;
@@ -68,6 +98,8 @@
   --color-tinta: #0d0d0d;
   --color-acento: #0d0d0d;
   --color-acento2: #f7e9d7;
+  --fuente-titulares: "Syne", sans-serif;
+  --peso-titulares: 700;
 }
 [data-tema="curioso"] {
   --color-fondo: #1d5e3f;
@@ -77,4 +109,6 @@
   --color-tinta: #fff3d6;
   --color-acento: #f5c518;
   --color-acento2: #4fa3e0;
+  --fuente-titulares: "Bricolage Grotesque", sans-serif;
+  --peso-titulares: 700;
 }
