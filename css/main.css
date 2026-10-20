@@ -248,3 +248,9 @@ footer {
   border-bottom: 2px solid;
   padding-bottom: 4px;
 }
+.titulo-tarjeta {
+  font-size: 24px;
+}
+.texto-largo {
+  max-width: 65ch;
+}
