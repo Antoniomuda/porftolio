@@ -28,22 +28,29 @@ const lect = document.getElementById("lectura");
 function aplicarLectura(activa) {
   if (activa === true) {
     document.documentElement.dataset.lectura = "si";
+    if (lect){
     lect.setAttribute("aria-pressed", "true");
+    }
     localStorage.setItem("lectura", "si");
   } else {
     document.documentElement.dataset.lectura = "no";
+    if (lect){
     lect.setAttribute("aria-pressed", "false");
+    }
     localStorage.setItem("lectura", "no");
   }
 }
 
-lect.addEventListener("click", function () {
-  if (lect.getAttribute("aria-pressed") === "true") {
-    aplicarLectura(false);
-  } else {
-    aplicarLectura(true);
-  }
-});
+
+if (lect) {
+  lect.addEventListener("click", function () {
+    if (lect.getAttribute("aria-pressed") === "true") {
+      aplicarLectura(false);
+    } else {
+      aplicarLectura(true);
+    }
+  });
+}
 if (localStorage.getItem("lectura") === "si") {
   aplicarLectura(true);
 }

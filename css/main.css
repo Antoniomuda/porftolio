@@ -243,3 +243,8 @@ footer {
   background-color: var(--color-tinta);
   color: var(--color-fondo);
 }
+
+.menu li a[aria-current="page"] {
+  border-bottom: 2px solid;
+  padding-bottom: 4px;
+}
