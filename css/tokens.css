@@ -32,6 +32,19 @@
   font-weight: 400 800;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Atkinson";
+  src: url("../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson";
+  src: url("../assets/fonts/atkinson-hyperlegible-latin-700-normal.woff2");
+  font-weight: 700;
+  font-display: swap;
+}
 :root {
   --color-fondo: #f3ebdd;
 
@@ -66,6 +79,10 @@
   --espacio-5: 96px;
 
   --margen-lateral: clamp(16px, 5vw, 96px);
+
+  --tamaño-texto: 18px;
+
+  --interlineado: 1.5;
 }
 
 [data-tema="alegria"] {
@@ -103,4 +120,11 @@
   --color-acento2: #4fa3e0;
   --fuente-titulares: "Bricolage Grotesque", sans-serif;
   --peso-titulares: 800;
+}
+[data-lectura="si"] {
+  --fuente-texto: "Atkinson", sans-serif;
+  --fuente-titulares: "Atkinson", sans-serif;
+  --peso-titulares: 700;
+  --tamano-texto: 20px;
+  --interlineado: 1.7;
 }

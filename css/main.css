@@ -3,6 +3,8 @@ body {
   font-family: var(--fuente-texto);
   color: var(--color-tinta);
   transition: var(--color-fondo) var(--fuente-texto) 0.4s;
+  font-size: var(--tamano-texto);
+  line-height: var(--interlineado);
 }
 h1,
 h2,
