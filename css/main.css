@@ -300,5 +300,6 @@ footer {
 }
 
 .error {
-  font-size: 136px;
+  font-size: 16px;
+  color: black;
 }

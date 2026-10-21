@@ -13,6 +13,7 @@
     <link href="css/main.css" rel="stylesheet" />
 
     <script defer src="js/script.js"></script>
+    <script defer src="js/formulario.js"></script>
   </head>
   <body>
     <header>
@@ -59,7 +60,9 @@
               minlength="2"
               maxlength="60"
               autocomplete="name"
+              aria-describedby="error-nombre"
             />
+            <p class="error" id="error-nombre"></p>
             <label for="correo">Correo electrónico:</label
             ><input
               type="email"
@@ -68,7 +71,9 @@
               name="email"
               required
               autocomplete="email"
+              aria-describedby="error-correo"
             />
+            <p class="error" id="error-correo"></p>
             <label for="motivo">Motivo:</label>
             <select name="motivo" id="motivo">
               <option value="vacante">Una vacante</option>
@@ -89,11 +94,15 @@
               id="mensaje"
               required
               minlength="4"
-              maxlength="800"        
+              maxlength="800"
+              aria-describedby="error-mensaje"
             ></textarea>
+            <p class="error" id="error-mensaje"></p>
 
             <div>
-              <button type="submit" class="boton-principal">Enviar</button>
+              <button type="submit" class="boton-principal" id="enviar">
+                Enviar
+              </button>
               <p>
                 Los datos de contacto personales los recibo únicamente para
                 poder contestar al mensaje, no se usan para nada más.
