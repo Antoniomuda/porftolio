@@ -1,12 +1,25 @@
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+}
+
 body {
   background-color: var(--color-fondo);
   font-family: var(--fuente-texto);
   color: var(--color-tinta);
-  transition:
-    background-color 0.4s,
-    color 0.4s;
+
   font-size: var(--tamano-texto);
   line-height: var(--interlineado);
+}
+
+main > .seccion:first-child {
+  border-top: none;
 }
 h1,
 h2,
@@ -320,4 +333,8 @@ dialog::backdrop {
 }
 .aviso[data-tipo="error"] {
   border-color: var(--color-acento);
+}
+::selection {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
 }
