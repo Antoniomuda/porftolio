@@ -2,7 +2,9 @@ body {
   background-color: var(--color-fondo);
   font-family: var(--fuente-texto);
   color: var(--color-tinta);
-  transition: var(--color-fondo) var(--fuente-texto) 0.4s;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
   font-size: var(--tamano-texto);
   line-height: var(--interlineado);
 }
@@ -205,7 +207,7 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-.botones-sobre-mi {
+.grupo-botones {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -219,7 +221,7 @@ h2 {
   line-height: 0.85;
   letter-spacing: -0.02em;
 }
-.seccion-contacto .correo {
+.correo {
   font-size: clamp(20px, 2vw, 34px);
   overflow-wrap: anywhere;
 }
@@ -255,24 +257,43 @@ footer {
   max-width: 65ch;
 }
 
-.caja-formulario {
+.caja-contacto {
+  flex: 1 1 400px;
+}
+
+.caja-formulario form,
+.caja-contacto {
+  display: flex;
   flex-direction: column;
-  gap: var(--espacio-1);
+  gap: var(--espacio-2);
 }
 .caja-formulario label {
-  font-weight: bold;
-  display: block;
+  font-weight: 700;
 }
 .caja-formulario input,
-select,
-option,
-textarea {
+.caja-formulario select,
+.caja-formulario textarea {
   width: 100%;
   padding: var(--espacio-2);
   border: 2px solid;
   border-radius: var(--radio-esquinas);
   background-color: transparent;
   color: inherit;
+}
+
+.caja-formulario textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.caja-formulario
+  input:focus-visible
+  .caja-formulario
+  select:focus-visible
+  .caja-formulario
+  textarea:focus-visible {
+  outline: 3px solid;
+  outline: 2px;
 }
 .escondido {
   display: none;

@@ -23,13 +23,13 @@ blockquote {
 }
 * {
   box-sizing:border-box;
-  ::before ::after;
+  ::before ::after
 }
 img {
   max-width:100%;
   display: block;
 }
 button,
-input {
+input, select, textarea {
   font: inherit;
 }

@@ -76,7 +76,12 @@
               <option value="saludar">Solo quiero saludar</option>
             </select>
 
-            <input type="text" name="_gotcha" class="escondido" />
+            <input
+              type="text"
+              name="_gotcha"
+              class="escondido"
+              autocomplete="off"
+            />
 
             <label for="mensaje">Mensaje:</label>
             <textarea
@@ -84,7 +89,7 @@
               id="mensaje"
               required
               minlength="4"
-              maxlength="800"
+              maxlength="800"        
             ></textarea>
 
             <div>
@@ -96,12 +101,14 @@
             </div>
           </form>
         </div>
-        <h2>O directamente:</h2>
+
         <div class="caja-contacto">
+          <h2 class="titulo-tarjeta">O directamente:</h2>
+
+          <a class="correo" href="mailto:antoniomurillodavila@gmail.com"
+            >antoniomurillodavila@gmail.com</a
+          >
           <div class="grupo-botones">
-            <a class="correo" href="mailto:antoniomurillodavila@gmail.com"
-              >antoniomurillodavila@gmail.com</a
-            >
             <a
               class="boton-principal"
               href="https://www.linkedin.com/in/antoniomurillodavila"
