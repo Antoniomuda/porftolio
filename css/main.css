@@ -298,3 +298,7 @@ footer {
 .escondido {
   display: none;
 }
+
+.error {
+  font-size: 136px;
+}
