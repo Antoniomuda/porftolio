@@ -254,3 +254,26 @@ footer {
 .texto-largo {
   max-width: 65ch;
 }
+
+.caja-formulario {
+  flex-direction: column;
+  gap: var(--espacio-1);
+}
+.caja-formulario label {
+  font-weight: bold;
+  display: block;
+}
+.caja-formulario input,
+select,
+option,
+textarea {
+  width: 100%;
+  padding: var(--espacio-2);
+  border: 2px solid;
+  border-radius: var(--radio-esquinas);
+  background-color: transparent;
+  color: inherit;
+}
+.escondido {
+  display: none;
+}

@@ -1,5 +1,7 @@
 const botones = document.querySelectorAll("button[data-tema]");
 
+
+
 function aplicarTema(nombre) {
   document.documentElement.dataset.tema = nombre;
   botones.forEach(function (bot) {

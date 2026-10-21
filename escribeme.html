@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Antonio Murillo, Full-Stack Developer en Madrid. Muestro lo
-       que he hecho durante mis prácticas FCT, webs reales publicadas y experimentos y cómo pasé de la óptica al código"
+      content="Página con formulario de contacto para poder enviar propuestas laborales."
     />
-    <title>Portfolio Antonio M.</title>
+    <title>Escríbeme · Antonio M.</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/tokens.css" />
     <link href="css/main.css" rel="stylesheet" />
@@ -38,7 +37,89 @@
       </ul>
     </header>
 
-    <main id="cuerpo"></main>
+    <main id="cuerpo">
+      <section class="seccion">
+        <div class="cabecera-seccion">
+          <h1>Escríbeme</h1>
+
+          <p>¿Tienes una vacante, un proyecto o solo quieres saludar?</p>
+        </div>
+      </section>
+
+      <section class="seccion seccion-dos-columnas">
+        <div class="caja-formulario">
+          <form action="https://formspree.io/f/xkjoledn" method="post">
+            <label for="nombre">Nombre: </label>
+            <input
+              type="text"
+              placeholder="Ana García"
+              id="nombre"
+              name="nombre"
+              required
+              minlength="2"
+              maxlength="60"
+              autocomplete="name"
+            />
+            <label for="correo">Correo electrónico:</label
+            ><input
+              type="email"
+              placeholder="info@mail.com"
+              id="correo"
+              name="email"
+              required
+              autocomplete="email"
+            />
+            <label for="motivo">Motivo:</label>
+            <select name="motivo" id="motivo">
+              <option value="vacante">Una vacante</option>
+              <option value="proyecto">Un proyecto</option>
+              <option value="saludar">Solo quiero saludar</option>
+            </select>
+
+            <input type="text" name="_gotcha" class="escondido" />
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              required
+              minlength="4"
+              maxlength="800"
+            ></textarea>
+
+            <div>
+              <button type="submit" class="boton-principal">Enviar</button>
+              <p>
+                Los datos de contacto personales los recibo únicamente para
+                poder contestar al mensaje, no se usan para nada más.
+              </p>
+            </div>
+          </form>
+        </div>
+        <h2>O directamente:</h2>
+        <div class="caja-contacto">
+          <div class="grupo-botones">
+            <a class="correo" href="mailto:antoniomurillodavila@gmail.com"
+              >antoniomurillodavila@gmail.com</a
+            >
+            <a
+              class="boton-principal"
+              href="https://www.linkedin.com/in/antoniomurillodavila"
+              >LinkedIn</a
+            >
+            <a class="boton-principal" href="https://github.com/Antoniomuda/"
+              >GitHub</a
+            >
+            <a
+              class="boton-principal"
+              href="assets/docs/amdCV.pdf"
+              download="CV-Antonio-Murillo.pdf"
+              >Descargar CV (PDF)</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <p>© 2026 Antonio Murillo</p>
