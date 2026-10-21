@@ -303,3 +303,14 @@ footer {
   font-size: 16px;
   color: black;
 }
+.aviso {
+  background-color: var(--color-fondo);
+  color: var(--color-tinta);
+  border: 2px;
+  border-radius: var(--radio-esquinas);
+  padding: 20px;
+  max-width: 20%;
+}
+dialog::backdrop{
+  background-color: black transparent;  
+}

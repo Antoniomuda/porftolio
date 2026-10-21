@@ -1,10 +1,20 @@
 /** 
  En este arcivo voy a conseguir validar los datos introducidos por el 
- usuario. 
+ usuario. A parte voy a controlar el aviso de correo enviado para evitar
+ que lo gestione Formfree y no lo redirija a esa web con el mensaje de éxito de envío.
+ Saldrá un mensaje de aviso de éxito al envíar el mail.
 **/
 
 const formulario = document.querySelector("form");
-formulario.noValidate=true;
+formulario.noValidate = true;
+
+function mostrarAviso(texto, tipo) {
+  const aviso = document.getElementById("aviso");
+  const avisoTexto = document.getElementById("aviso-texto");
+  avisoTexto.textContent = texto;
+  aviso.dataset.tipo = tipo;
+  aviso.showModal();
+}
 
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
@@ -48,34 +58,35 @@ formulario.addEventListener("submit", function (evento) {
     mensaje.removeAttribute("aria-invalid");
   }
 
-
-if (todoBien){
-    const boton = formulario.querySelector('button');
+  if (todoBien) {
+    const boton = formulario.querySelector("button");
     const estado = document.getElementById("estado-envio");
 
-      boton.disable= true;
-        boton.textContent ="Enviando...";
+    boton.disable = true;
+    boton.textContent = "Enviando...";
 
     fetch(formulario.action, {
-        method: "POST",
-        body: new FormData(formulario),
-        headers: { Accept: "application/json"}
+      method: "POST",
+      body: new FormData(formulario),
+      headers: { Accept: "application/json" },
     })
-    .then(function(respuesta){
-        if(respuesta.ok){
-            document.getElementById('estado-envio').innerHTML = "Mensaje enviado correctamente. Me pondré en contacto con usted a la mayor brevedad posible."
-            formulario.reset();
-        }else{
-            document.getElementById('estado-envio').innerHTML = "Algo ha fallado. Mejor escríbeme directamente al correo."
+      .then(function (respuesta) {
+        if (respuesta.ok) {
+         
+          mostrarAviso("¡Gracias! Le contesto pronto.", "ok");
+          formulario.reset();
+        } else {
+        
+            mostrarAviso("Algo ha fallado. Escríbame directamente a mi correo.", "error");
         }
-    })
-    .catch(function(){
-            document.getElementById('estado-envio').innerHTML = "Algo ha fallado. Mejor escríbeme directamente al correo."
-    })
-    .finally(function(){
-        boton.disable= false;
-        boton.textContent ="Enviar";
-    })
-}
-
+      })
+      .catch(function () {
+        document.getElementById("estado-envio").innerHTML =
+          "Algo ha fallado. Mejor escríbeme directamente al correo.";
+      })
+      .finally(function () {
+        boton.disable = false;
+        boton.textContent = "Enviar";
+      });
+  }
 });
