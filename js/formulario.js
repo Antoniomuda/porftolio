@@ -1,11 +1,11 @@
 /** 
  En este arcivo voy a conseguir validar los datos introducidos por el 
  usuario. A parte voy a controlar el aviso de correo enviado para evitar
- que lo gestione Formfree y no lo redirija a esa web con el mensaje de éxito de envío.
+ que lo gestione Formpree y no lo redirija a esa web con el mensaje de éxito de envío.
  Saldrá un mensaje de aviso de éxito al envíar el mail.
 **/
 
-const formulario = document.querySelector("form");
+const formulario = document.getElementById("formulario-contacto");
 formulario.noValidate = true;
 
 function mostrarAviso(texto, tipo) {
@@ -60,9 +60,9 @@ formulario.addEventListener("submit", function (evento) {
 
   if (todoBien) {
     const boton = formulario.querySelector("button");
-    const estado = document.getElementById("estado-envio");
 
-    boton.disable = true;
+
+    boton.disabled = true;
     boton.textContent = "Enviando...";
 
     fetch(formulario.action, {
@@ -81,8 +81,7 @@ formulario.addEventListener("submit", function (evento) {
         }
       })
       .catch(function () {
-        document.getElementById("estado-envio").innerHTML =
-          "Algo ha fallado. Mejor escríbeme directamente al correo.";
+        mostrarAviso("Algo ha fallado. Mejor escríbeme directamente al correo.", "error");
       })
       .finally(function () {
         boton.disable = false;
