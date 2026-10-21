@@ -1,3 +1,8 @@
+/** 
+ En este arcivo voy a conseguir validar los datos introducidos por el 
+ usuario. 
+**/
+
 const formulario = document.querySelector("form");
 formulario.noValidate=true;
 
@@ -42,10 +47,35 @@ formulario.addEventListener("submit", function (evento) {
     errorMensaje.textContent = "";
     mensaje.removeAttribute("aria-invalid");
   }
-  if (todoBien) {
-    console.log("Todo correcto. Listo para enviar");
-  }
-  else {
-    console.log("hay errores");
-  }
+
+
+if (todoBien){
+    const boton = formulario.querySelector('button');
+    const estado = document.getElementById("estado-envio");
+
+      boton.disable= true;
+        boton.textContent ="Enviando...";
+
+    fetch(formulario.action, {
+        method: "POST",
+        body: new FormData(formulario),
+        headers: { Accept: "application/json"}
+    })
+    .then(function(respuesta){
+        if(respuesta.ok){
+            document.getElementById('estado-envio').innerHTML = "Mensaje enviado correctamente. Me pondré en contacto con usted a la mayor brevedad posible."
+            formulario.reset();
+        }else{
+            document.getElementById('estado-envio').innerHTML = "Algo ha fallado. Mejor escríbeme directamente al correo."
+        }
+    })
+    .catch(function(){
+            document.getElementById('estado-envio').innerHTML = "Algo ha fallado. Mejor escríbeme directamente al correo."
+    })
+    .finally(function(){
+        boton.disable= false;
+        boton.textContent ="Enviar";
+    })
+}
+
 });
