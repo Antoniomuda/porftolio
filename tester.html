@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Optotipo tipográfico" />
+    <title>Optotipo tipográfico · Antonio M.</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link href="css/tester.css" rel="stylesheet" />
+
+    <script defer src="js/script.js"></script>
+    <script defer src="js/tester.js"></script>
+  </head>
+
+  <body class="tester">
+    <a href="#cuerpo" class="saltar">Saltar al contenido</a>
+    <header class="barra">
+      <a href="index.html"
+        ><img
+          src="assets/logo.svg"
+          alt="Antonio Murillo, inicio"
+          class="barra-logo"
+      /></a>
+      <a href="laboratorio.html">← Laboratorio</a>
+    </header>
+
+    <main id="cuerpo">
+      <h1>Lee la primera línea, por favor.</h1>
+      <p>
+        Escribe lo que quieras en la primera línea y juega con la letra, el
+        tamaño y el grosor. A ver hasta dónde llegas leyendo.
+      </p>
+
+      <div class="consulta">
+        <div class="controles">
+          <div>
+            <label for="fuente">Tipo de letra</label>
+            <select name="fuente" id="fuente">
+              <option value="Fraunces">Fraunces</option>
+              <option value="Syne">Syne</option>
+              <option value="Bricolage Grotesque">Bricolage Grotesque</option>
+              <option value="Pixelify">Pixelify</option>
+              <option value="Atkinson">Atkinson</option>
+              <option value="Space Grotesk" selected>Space Grotesk</option>
+            </select>
+          </div>
+          <div>
+            <label for="tamano">Tamaño</label>
+            <input type="range" id="tamano" min="16" max="200" value="96" />
+            <p class="valor">
+              <output id="valor-tamano" for="tamano">96</output> px
+            </p>
+          </div>
+          <div>
+            <label for="grosor">Grosor</label>
+            <input
+              type="range"
+              id="grosor"
+              min="100"
+              max="900"
+              step="100"
+              value="400"
+            />
+            <p class="valor">
+              <output id="valor-grosor" for="grosor">400</output>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <ol class="filas">
+            <li>
+              <span
+                class="fila-texto"
+                contenteditable="true"
+                role="textbox"
+                aria-label="Texto de prueba, puedes editarlo"
+                spellcheck="false"
+                >E F P T O</span
+              >
+              <span class="agudeza">0,1</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">N S B C</span>
+              <span class="agudeza">0,2</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">A T R E</span>
+              <span class="agudeza">0,3</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">D P M T</span>
+              <span class="agudeza">0,4</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">A L M R</span>
+              <span class="agudeza">0,5</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">H T M L</span>
+              <span class="agudeza">0,6</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">R C O S</span>
+              <span class="agudeza">0,7</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">T U O P</span>
+              <span class="agudeza">0,8</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">C S L A</span>
+              <span class="agudeza">0,9</span>
+            </li>
+            <li aria-hidden="true">
+              <span class="fila-texto">U I W X</span>
+              <span class="agudeza">1,0</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <section class="duocromo">
+        <h2>Test duocromo</h2>
+        <div class="duocromo-mitades" aria-hidden="true">
+          <p class="rojo">HOLA</p>
+          <p class="verde">HOLA</p>
+        </div>
+        <p>
+          <!-- la pregunta y una explicación corta, escrita por ti como óptico -->
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

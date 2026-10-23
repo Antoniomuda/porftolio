@@ -83,6 +83,8 @@
   --tamaño-texto: 18px;
 
   --interlineado: 1.5;
+
+  --muestra-tamano: 96px;
 }
 
 [data-tema="alegria"] {
