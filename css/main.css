@@ -299,12 +299,9 @@ footer {
   resize: vertical;
 }
 
-.caja-formulario
-  input:focus-visible
-  .caja-formulario
-  select:focus-visible
-  .caja-formulario
-  textarea:focus-visible {
+.caja-formulario input:focus-visible,
+.caja-formulario select:focus-visible,
+.caja-formulario textarea:focus-visible {
   outline: 3px solid;
   outline: 2px;
 }
@@ -317,7 +314,7 @@ footer {
 }
 
 .error::before {
-  content: icon;
+  content: "⚠ ";
 }
 
 .aviso {
@@ -346,11 +343,14 @@ dialog::backdrop {
   scroll-snap-type: x mandatory;
 }
 .galeria img {
-  flex: 0 0 85%;
-  scroll-snap-align: center;
-  aspect-ratio: 16/10;
+  flex: 0 0 min(95%, 720px);
+  min-width: 0;
+  aspect-ratio: 16/9;
   object-fit: cover;
+  object-position: top;
   border-radius: var(--radio-esquinas);
+  border: 2px solid var(--color-tinta);
+  scroll-snap-align: center;
 }
 dt {
   font-size: 12px;
@@ -363,4 +363,48 @@ dd {
   margin-left: 0;
   margin-bottom: var(--espacio-3);
   max-width: 65ch;
+}
+.carrusel-botones {
+  display: flex;
+  gap: var(--espacio-0);
+  justify-content: flex-end;
+}
+.carrusel-botones button {
+  border-radius: var(--radio-pastilla);
+  height: 44px;
+  width: 44px;
+  border: 2px solid;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.carrusel-botones button:hover,
+.carrusel-botones button:focus-visible {
+  background-color: var(--color-tinta);
+  color: var(--color-fondo);
+}
+.caso ul {
+  padding-left: 1.2em;
+}
+
+.caso > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1) var(--espacio-4);
+  padding-block: var(--espacio-3);
+  border-top: 2px solid var(--color-tinta);
+}
+.caso dt {
+  flex: 1 1 180px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.caso dd {
+  flex: 3 1 400px;
+  max-width: 65ch;
+}
+.caso dd > * + * {
+  margin-top: var(--espacio-1);
 }

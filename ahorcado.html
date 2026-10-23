@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Caso de estudio: juego de El ahorcado en PHP con MVC, login, 
+      niveles de dificulta y pistas por AJAX."
+    />
+    <title>El ahorcado · Antonio M.</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script defer src="js/script.js"></script>
+    <script defer src="js/carrusel.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="#cuerpo" class="saltar">Saltar al contenido</a>
+      <a href="index.html"
+        ><img class="logo" src="assets/logo.svg" alt="Antonio Murillo, inicio"
+      /></a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="trabajo.html" aria-current="page">Trabajo</a></li>
+          <li><a href="laboratorio.html">Laboratorio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="escribeme.html">Escríbeme</a></li>
+        </ul>
+      </nav>
+
+      <ul class="idiomas">
+        <li><a href="index.html">ES</a></li>
+        <li><a href="lang/ingles.html">EN</a></li>
+        <li><a href="lang/frances.html">FR</a></li>
+      </ul>
+    </header>
+
+    <main id="cuerpo">
+      <section class="seccion">
+        <div class="cabecera-seccion">
+          <h1>El ahorcado</h1>
+          <p>Cinco prácticas de la FP fusionadas en una sola aplicación.</p>
+        </div>
+
+        <div class="carrusel">
+          <div
+            class="galeria"
+            tabindex="0"
+            aria-label="Capturas de la aplicación del juego del Ahorcado"
+          >
+            <img
+              src="assets/img/ahorcado1.webp"
+              alt="Página de login ahorcado"
+            />
+            <img
+              src="assets/img/ahorcado2.webp"
+              alt="Página inicio ahorcado con partida iniciada"
+            />
+            <img
+              src="assets/img/ahorcado3.webp"
+              alt="Búsqueda de partidas con criterios de búsqueda"
+            />
+            <img
+              src="assets/img/ahorcado4.webp"
+              alt="Selección de partidas encontradas con criterios de búsqueda"
+            />
+            <img
+              src="assets/img/ahorcado5.webp"
+              alt="Panel de puntuación de partidas"
+            />
+            <img src="assets/img/ahorcado9.webp" alt="Partidas inacabadas" />
+            <img src="assets/img/ahorcado10.webp" alt="Menú usuario" />
+          </div>
+          <div class="carrusel-botones">
+            <button
+              type="button"
+              class="carrusel-anterior"
+              aria-label="Imagen anterior"
+            >
+              &larr;
+            </button>
+            <button
+              type="button"
+              class="carrusel-siguiente"
+              aria-label="Imagen siguiente"
+            >
+              &rarr;
+            </button>
+          </div>
+        </div>
+        <dl class="caso">
+          <div>
+            <dt>Resumen</dt>
+            <dd>
+              El clásico juego de adivinar palabras, hecho en PHP para el módulo
+              de Desarrollo Web en Entorno Servidor del FP de DAW.
+            </dd>
+          </div>
+          <div>
+            <dt>El reto</dt>
+            <dd>
+              Durante los dos últimos meses del curso practicamos cada
+              funcionalidad por separado, cada una en un código base diferente,
+              empezando desde cero: login, niveles, pistas, partidas
+              guardadas,... Yo decidí integrar las que me parecían más
+              interesantes en una sola aplicación y cambiarle el diseño, que en
+              origen estaba hecho en Bootstrap.
+            </dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+
+            <dd>
+              <ul>
+                <li>PHP arquitectura MVC</li>
+                <li>MySQL con PDO y consultas preparadas</li>
+                <li>BladeOne para las vistas</li>
+                <li>JavaScript con jQuery y AJAX para las pistas</li>
+                <li>HTML5 Y CSS3</li>
+                <li>Composer y variables de entorno .env</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Una decisión</dt>
+
+            <dd>
+              <p>
+                La dificultad no la puse a mano, usé la clase
+                <code>AnalizadorComplejidad</code> que puntúa cada palabra del 0
+                al 4 según tres criterios.
+              </p>
+              <ul>
+                <li>Su longitud: más de 8 letras, más difícil.</li>
+                <li>
+                  Si tiene vocales seguidas, que son más fáciles de acertar.
+                </li>
+                <li>
+                  Si lleva letras poco frecuentes como la x, z, q, k, h, w
+                </li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Lo que más me costó</dt>
+
+            <dd>
+              Juntar cinco prácticas que no se habían hecho para convivir, cada
+              una tenía sus propias sesiones, sus nombres de variables y su base
+              de datos. Tuve que uniricarlo todo en una sola estructura.
+            </dd>
+          </div>
+          <div>
+            <dt>Lo que hoy haría distinto</dt>
+            <dd>
+              <p>
+                Revisando el código meses después, encontré cosas que hoy haría
+                de otra forma. Ya están corregidas:
+              </p>
+              <ul>
+                <li>
+                  Las contraseñas se guardaban en texto plano. Ahora se guardan
+                  con <code>password_hash</code>.
+                </li>
+                <li>
+                  El nivel 0 de dificultad no podía salir nunca: pedía una
+                  palabra sin "r" que contuviera "ar", "er" o "ir".
+                </li>
+                <li>
+                  Contaba las letras con <code>strlen</code>, que cuenta bytes:
+                  "camión" le parecía de 7 letras. Ahora uso
+                  <code>mb_strlen</code>.
+                </li>
+                <li>
+                  Había subido el archivo <code>.env</code> al repositorio.
+                  Ahora está en el <code>.gitignore</code>.
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+        <div class="grupo-botones">
+          <a
+            href="https://github.com/Antoniomuda/juego-ahorcado"
+            target="_blank"
+            class="boton-principal"
+            >Ver repositorio del juego</a
+          >
+          <a href="trabajo.html">Volver a Trabajo</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Antonio M.</p>
+      <p>Hecho a mano con HTML, CSS y JavaScript</p>
+      <ul class="idiomas">
+        <li><a href="index.html">ES</a></li>
+        <li><a href="lang/ingles.html">EN</a></li>
+        <li><a href="lang/frances.html">FR</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
